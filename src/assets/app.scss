@@ -1,0 +1,66 @@
+h2{
+  font-weight: bolder!important;
+}
+
+.navbar-header{
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-brand {
+  a {
+    color: #777 !important;
+  }
+  a:hover {
+    color: #5e5e5e !important;
+    text-decoration: none !important;
+  }
+}
+
+.loading{
+  margin: 15px;
+}
+
+.user-details{
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 70px;
+  border: solid 1px silver;
+  border-radius: 7px;
+  background-color: #f9f9f9;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+}
+
+.username-text {
+  color: black;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.username-text:hover{
+  color: black;
+}
+
+#user-general-info-container {
+  font-size: 18px;
+
+  .row {
+    margin: 20px;
+  }
+
+  .current-user-field-name {
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 992px) {
+  .user-details{
+    height: 120px;
+  }
+}
