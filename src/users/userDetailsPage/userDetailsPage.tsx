@@ -20,18 +20,18 @@ export class UserDetailsPage extends React.Component<any> {
 
         if (currentUser) {
             return (
-                <div className="container-fluid">
-                    <div className="row">
+                <div>
+                    <div className="flex">
                         <UserDetailsTabs location={this.props.location} match={this.props.match}/>
                     </div>
                     <div>{Routes}</div>
                 </div>);
         } else {
             return (
-                <div className="container-fluid">
-                    <div className="row">
+                <div>
+                    <div className="flex">
                         {!currentUser && !getUserError &&  <div className="loading">Loading . . .</div>}
-                        {!currentUser && getUserError && <div className="alert alert-danger">{getUserError.status} - {getUserError.responseJSON.message}</div>}
+                        {!currentUser && getUserError && <div className="error">{getUserError.status} - {getUserError.responseJSON.message}</div>}
                     </div>
                 </div>
             );

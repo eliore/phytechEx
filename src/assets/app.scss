@@ -1,46 +1,95 @@
-h2{
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial;
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+#user-list-page, #user-general-info-page {
+  justify-content: center;
+}
+
+#users-title, #user-general-info-title {
   font-weight: bolder!important;
 }
 
-.navbar-header{
-  margin-left: 10px;
-  font-size: 20px;
-  font-weight: bold;
+.flex {
+  display: flex;
 }
 
-.navbar-brand {
-  a {
-    color: #777 !important;
-  }
-  a:hover {
-    color: #5e5e5e !important;
-    text-decoration: none !important;
-  }
+.col-container {
+  flex-direction: column;
+}
+
+.navbar{
+  padding: 10px;
+  background-image: linear-gradient(silver, #f8f8f8);
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid silver 1px;
 }
 
 .loading{
-  margin: 15px;
+  z-index: 1000;
+  position: relative;
+  min-width: 300px;
+  width: 100%;
+
+  img {
+    position: absolute;
+    width: 120px;
+    height: 80px;
+  }
+}
+
+.user-list{
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+.user-list::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+.user-list::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
 }
 
 .user-details{
-  padding: 10px;
-  margin-bottom: 10px;
-  height: 70px;
-  border: solid 1px silver;
-  border-radius: 7px;
+  margin-bottom: 15px;
+  height: 10vh;
+  width: 50vw;
+  border: solid 1px #888888;
+  border-radius: 5px;
   background-color: #f9f9f9;
+  box-shadow: 6px 6px 3px #888888;
 }
 
 .user-img {
+  margin: 10px;
   width: 50px;
   height: 50px;
+  border-radius: 50px;
+  flex: 1;
 }
 
 .username-text {
+  margin: auto;
   color: black;
   line-height: 50px;
   font-size: 18px;
   font-weight: bold;
+  margin-left: 3vw;
+  flex: 3;
 }
 
 .username-text:hover{
@@ -49,18 +98,38 @@ h2{
 
 #user-general-info-container {
   font-size: 18px;
+}
 
-  .row {
-    margin: 20px;
+#current-user-fields-container {
+  margin-left: 25px;
+
+  div {
+    margin-bottom: 10px;
   }
 
   .current-user-field-name {
     font-weight: bold;
+    margin-right: 5px;
   }
 }
 
-@media (max-width: 992px) {
-  .user-details{
-    height: 120px;
+.error {
+  color: darkred;
+  background-color: lightpink;
+  text-align: center;
+  padding: 20px;
+  border-radius: 25px;
+  border: solid 1px darkred;
+  margin: auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .user-details {
+    display: flex;
+    width: 90vw;
+  }
+
+  #user-general-info-container {
+    flex-direction: column;
   }
 }

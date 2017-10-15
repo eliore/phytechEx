@@ -3,10 +3,6 @@ const config = require('./webpack.config');
 const path = require('path');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
-const bootstrapEntryPoints = require('./webpack.bootstrap.config');
-const bootstrapConfig =  bootstrapEntryPoints.dev;
-
-config.entry.vendors = bootstrapConfig;
 config.devtool = 'source-map';
 config.devServer = {
     contentBase: path.resolve(__dirname, './dist'),

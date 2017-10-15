@@ -6,16 +6,19 @@ import {UserGeneralInfo} from "./userGeneralInfo";
 export class UserGeneralInfoPage extends React.Component<any> {
     componentDidMount() {
         setTimeout(() => {
-            this.props.appStore.changeTab(<span>{`User Details (Username: ${this.props.match.params.id})`} <span className="glyphicon glyphicon-menu-right"></span> {`User General Info`}</span>);
+            this.props.appStore.changeTab(<span>{`User Details (Username: ${this.props.match.params.id})`}
+                > {`User General Info`}</span>);
         }, 0);
     }
 
     render() {
-        return (<div className="container">
-            <div className="row">
-                <h2>User General Info</h2>
+        return (<div id="user-general-info-page" className="flex">
+            <div className="flex col-container">
+                <div>
+                    <h2 id="user-general-info-title">User General Info</h2>
+                </div>
+                <UserGeneralInfo/>
             </div>
-            <UserGeneralInfo/>
         </div>);
     }
 }

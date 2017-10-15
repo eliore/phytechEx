@@ -12,11 +12,11 @@ class UserListItem extends React.Component<any> {
     }
 
     render() {
-        return (<div className="user-details row">
-            <div className="col-md-3">
-                <img src={this.user.avatar_url} className="user-img img-circle" />
+        return (<div className="user-details flex">
+            <div>
+                <img src={this.user.avatar_url} className="user-img" />
             </div>
-            <div className="col-md-9 username-text">{this.user.login} (ID: {this.user.id})</div>
+            <div className="username-text">{this.user.login} (ID: {this.user.id})</div>
         </div>);
     }
 }

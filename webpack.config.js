@@ -51,10 +51,6 @@ module.exports = {
                 ]
             },
             {
-                test: /bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/,
-                use: ['imports-loader?jQuery=jquery']
-            },
-            {
                 test: /\.json$/,
                 use: 'json-loader'
             }

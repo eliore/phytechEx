@@ -4,7 +4,7 @@ import {UserList} from "./userList";
 
 @inject('appStore') @observer
 export class UserListPage extends React.Component<any> {
-    componentDidMount(){
+    componentDidMount() {
         this.props.appStore.changeTab('User List');
 
         if (!this.props.appStore.usersStore.users.length) {
@@ -13,11 +13,13 @@ export class UserListPage extends React.Component<any> {
     }
 
     render() {
-        return (<div className="container">
-            <div className="row">
-                <h2>Github Users</h2>
+        return (<div id="user-list-page" className="flex">
+            <div className="flex col-container">
+                <div>
+                    <h2 id="users-title">Github Users</h2>
+                </div>
+                <UserList/>
             </div>
-            <UserList/>
         </div>);
     }
 }
