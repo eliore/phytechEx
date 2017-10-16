@@ -1,4 +1,4 @@
-import {runInAction, observable} from 'mobx';
+import {action, runInAction, observable} from 'mobx';
 
 class UsersStore {
     httpClient: any;
@@ -24,7 +24,7 @@ class UsersStore {
         this.lastUserId = initialStore.lastUserId;
     }
 
-
+    @action
     async getUsers() {
         try {
             const url = this.lastUserId ? `${this.USERS_API}?since=${this.lastUserId}` : this.USERS_API;

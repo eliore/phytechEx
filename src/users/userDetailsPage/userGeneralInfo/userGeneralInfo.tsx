@@ -9,7 +9,7 @@ export class UserGeneralInfo extends React.Component<any> {
         const {currentUser} = this.props.appStore.usersStore;
 
         return (<div id="user-general-info-container" className="flex">
-                <div>
+                <div id="current-user-img-container">
                     <img id="current-user-img" src={currentUser.avatar_url}/>
                 </div>
                 <div id="current-user-fields-container" className="flex col-container">

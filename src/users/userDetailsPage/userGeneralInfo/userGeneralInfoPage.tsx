@@ -15,7 +15,7 @@ export class UserGeneralInfoPage extends React.Component<any> {
         return (<div id="user-general-info-page" className="flex">
             <div className="flex col-container">
                 <div>
-                    <h2 id="user-general-info-title">User General Info</h2>
+                    <h2 className="title">User General Info</h2>
                 </div>
                 <UserGeneralInfo/>
             </div>

@@ -16,7 +16,7 @@ export class UserListPage extends React.Component<any> {
         return (<div id="user-list-page" className="flex">
             <div className="flex col-container">
                 <div>
-                    <h2 id="users-title">Github Users</h2>
+                    <h2 className="title">Github Users</h2>
                 </div>
                 <UserList/>
             </div>
