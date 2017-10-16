@@ -47,25 +47,28 @@ class UsersStore {
         }
     }
 
-    async getUser(username: any) {
-        try {
-            runInAction(() => {
-                this.currentUser = null;
-                this.getUserError = null;
-            });
+    @action
+    async getUser(username: string) {
+        if (!this.currentUser || this.currentUser.login.toLowerCase() !== username.toLowerCase()) {
+            try {
+                runInAction(() => {
+                    this.currentUser = null;
+                    this.getUserError = null;
+                });
 
-            let user = await this.httpClient.get(`${this.USERS_API}/${username}`);
+                let user = await this.httpClient.get(`${this.USERS_API}/${username}`);
 
-            runInAction(() => {
-                this.currentUser = user;
-                console.log('currentUser success');
-            });
-        }
-        catch (error) {
-            runInAction(() => {
-                this.getUserError = error;
-                console.log('currentUser error', error);
-            });
+                runInAction(() => {
+                    this.currentUser = user;
+                    console.log('currentUser success');
+                });
+            }
+            catch (error) {
+                runInAction(() => {
+                    this.getUserError = error;
+                    console.log('currentUser error', error);
+                });
+            }
         }
     }
 }
